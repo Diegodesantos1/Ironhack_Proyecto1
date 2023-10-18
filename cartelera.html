@@ -21,7 +21,7 @@
         </ul>
     </nav>
     <main>
-        <h2 align="center">Últimos estrenos</h2>
+        <h2>Últimos estrenos</h2>
         <div class="movie-container">
             <!-- Primer artículo -->
             <article class="movie">
@@ -29,7 +29,7 @@
                 <img src="img/estreno1.jpg" alt="Película 1" title="Oppenheimer">
                 <p>Director: Christopher Nolan</p>
                 <p>Género: Drama</p>
-                <p>anio: 2023</p>
+                <p>Año: 2023</p>
                 <p>Sinopsis: Basada en American Prometheus, una biografía de 2005 escrita por Kai Bird y Martin J.
                     Sherwin,
                     la cinta narra la vida de J. Robert Oppenheimer, un físico teórico que fue fundamental en el
@@ -46,7 +46,7 @@
                 <img src="img/estreno2.jpg" alt="Película 2" title="Saw X" width="180" height="285">
                 <p>Director: Kevin Greutert</p>
                 <p>Género: Terror</p>
-                <p>anio: 2023</p>
+                <p>Año: 2023</p>
                 <p>Sinopsis: Saw X es una película de terror estadounidense de 2023, dirigida y editada por Kevin
                     Greutert,
                     y escrita por Josh Stolberg y Peter Goldfinger. Es la décima entrega de la serie de películas de
@@ -60,7 +60,7 @@
                 <img src="img/estreno3.jpg" alt="Película 3" title="Barbie" width="180" height="285">
                 <p>Director: Greta Gerwig</p>
                 <p>Género: Comedia</p>
-                <p>anio: 2023</p>
+                <p>Año: 2023</p>
                 <p>Sinopsis: Barbie es una película de comedia fantástica estadounidense de 2023, dirigida por Greta
                     Gerwig
                     y escrita por Gerwig y Noah Baumbach. Basada en Barbie, la línea de muñecas de moda de Mattel, es la
@@ -120,14 +120,14 @@
                 // Obtener los parámetros de la URL
                 var titulo = getParameterByName("titulo");
                 var director = getParameterByName("director");
-                var anio = getParameterByName("anio");
+                var Año = getParameterByName("Año");
                 var genero = getParameterByName("genero");
                 var sinopsis = getParameterByName("sinopsis");
                 var imagen = getParameterByName("imagen");
 
                 // Mostrar la película recién agregada en la página
                 if (titulo) {
-                    var mainElement = document.querySelector("main");
+                    var movieContainer = document.querySelector(".movie-container");
 
                     // Crear un nuevo artículo para la película
                     var newArticle = document.createElement("article");
@@ -135,16 +135,16 @@
 
                     // Construir el contenido del artículo
                     newArticle.innerHTML = `
-                    <h3>${titulo}</h3>
-                    <img src="${imagen}" alt="${titulo}" title="${titulo}" width="180" height="285">
-                    <p>Director: ${director}</p>
-                    <p>Año de Lanzamiento: ${anio}</p>
-                    <p>Género: ${genero}</p>
-                    <p>Sinopsis: ${sinopsis}</p>
-                `;
+                        <h3>${titulo}</h3>
+                        <img src="${imagen}" alt="${titulo}" title="${titulo}" width="180" height="285">
+                        <p>Director: ${director}</p>
+                        <p>Año de Lanzamiento: ${Año}</p>
+                        <p>Género: ${genero}</p>
+                        <p>Sinopsis: ${sinopsis}</p>
+                    `;
 
-                    // Agregar el nuevo artículo al final de la sección main
-                    mainElement.appendChild(newArticle);
+                    // Agregar el nuevo artículo al final del contenedor de películas
+                    movieContainer.appendChild(newArticle);
                 }
             </script>
         </div>
