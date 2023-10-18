@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Películas - Películas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cartelera</h1>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de la página">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Películas</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 align="center">Últimos estrenos</h2>
+        <div class="movie-container">
+            <!-- Primer artículo -->
+            <article class="movie">
+                <h3>Oppenheimer</h3>
+                <img src="img/estreno1.jpg" alt="Película 1" title="Oppenheimer">
+                <p>Director: Christopher Nolan</p>
+                <p>Género: Drama</p>
+                <p>anio: 2023</p>
+                <p>Sinopsis: Basada en American Prometheus, una biografía de 2005 escrita por Kai Bird y Martin J. Sherwin,
+                    la cinta narra la vida de J. Robert Oppenheimer, un físico teórico que fue fundamental en el desarrollo
+                    de las primeras armas nucleares como parte del Proyecto Manhattan y, por lo tanto, marcó el comienzo de
+                    la era atómica.
+                </p>
+            </article>
+
+            <!-- Segundo artículo -->
+            <article class="movie">
+                <h3>Saw X</h3>
+                <img src="img/estreno2.jpg" alt="Película 2" title="Saw X" width="180" height="285">
+                <p>Director: Kevin Greutert</p>
+                <p>Género: Terror</p>
+                <p>anio: 2023</p>
+                <p>Sinopsis: Saw X es una película de terror estadounidense de 2023, dirigida y editada por Kevin Greutert,
+                    y escrita por Josh Stolberg y Peter Goldfinger. Es la décima entrega de la serie de películas de Saw,
+                    que además funciona como secuela directa a Saw (2004) y precuela de Saw II (2005).</p>
+            </article>
+
+            <!-- Tercer artículo -->
+            <article class="movie">
+                <h3>Barbie</h3>
+                <img src="img/estreno3.jpg" alt="Película 3" title="Barbie" width="180" height="285">
+                <p>Director: Greta Gerwig</p>
+                <p>Género: Comedia</p>
+                <p>anio: 2023</p>
+                <p>Sinopsis: Barbie es una película de comedia fantástica estadounidense de 2023, dirigida por Greta Gerwig
+                    y escrita por Gerwig y Noah Baumbach. Basada en Barbie, la línea de muñecas de moda de Mattel, es la
+                    primera película de acción en vivo de Barbie, luego de numerosas películas animadas por computadora,
+                    lanzadas directas a video y por transmisión televisiva. </p>
+            </article>
+            <!-- Cuarto artículo -->
+            <article class="movie">
+                <h3>Inception</h3>
+                <img src="img/inception.jpg" alt="Inception" title="Inception" width="180" height="285">
+                <p>Director: Christopher Nolan</p>
+                <p>Género: Ciencia Ficción</p>
+                <p>Año: 2010</p>
+                <p>Sinopsis: Inception es una película de ciencia ficción escrita y dirigida por Christopher Nolan. La trama gira en torno a la inserción de ideas en la mente de las personas a través de los sueños. Es conocida por su compleja narrativa y efectos visuales impresionantes.</p>
+            </article>
+
+            <!-- Quinto artículo -->
+            <article class="movie">
+                <h3>The Avengers</h3>
+                <img src="img/vengadores.jpg" alt="Los Vengadores" title="Los Vengadores" width="180" height="285">
+                <p>Director: Joss Whedon</p>
+                <p>Género: Acción</p>
+                <p>Año: 2012</p>
+                <p>Sinopsis: Los vengadores, dirigida por Joss Whedon, es una película de acción y superhéroes basada en los cómics de Marvel. La trama sigue la formación del equipo de superhéroes conocido como los Vengadores, quienes se unen para detener una amenaza alienígena liderada por Loki. La película es parte del Universo Cinematográfico de Marvel (MCU).</p>
+            </article>
+
+
+            <!-- Sexto artículo -->
+            <article class="movie">
+                <h3>Avatar</h3>
+                <img src="img/avatar.jpg" alt="Avatar" title="Avatar" width="180" height="285">
+                <p>Director: James Cameron</p>
+                <p>Género: Ciencia Ficción</p>
+                <p>Año: 2009</p>
+                <p>Sinopsis: Avatar, dirigida por James Cameron, es una película de ciencia ficción ambientada en el planeta Pandora. La película es conocida por su innovación tecnológica y visual, y sigue la historia de un marine parapléjico que participa en el programa Avatar y se involucra en un conflicto interplanetario.</p>
+            </article>
+        <script>
+            // Función para obtener los parámetros de la URL
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            // Obtener los parámetros de la URL
+            var titulo = getParameterByName("titulo");
+            var director = getParameterByName("director");
+            var anio = getParameterByName("anio");
+            var genero = getParameterByName("genero");
+            var sinopsis = getParameterByName("sinopsis");
+            var imagen = getParameterByName("imagen");
+
+            // Mostrar la película recién agregada en la página
+            if (titulo) {
+                var mainElement = document.querySelector("main");
+
+                // Crear un nuevo artículo para la película
+                var newArticle = document.createElement("article");
+                newArticle.className = "movie";
+
+                // Construir el contenido del artículo
+                newArticle.innerHTML = `
+                    <h3>${titulo}</h3>
+                    <img src="${imagen}" alt="${titulo}" title="${titulo}" width="180" height="285">
+                    <p>Director: ${director}</p>
+                    <p>Año de Lanzamiento: ${anio}</p>
+                    <p>Género: ${genero}</p>
+                    <p>Sinopsis: ${sinopsis}</p>
+                `;
+
+                // Agregar el nuevo artículo al final de la sección main
+                mainElement.appendChild(newArticle);
+            }
+        </script>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Derechos reservados</p>
+    </footer>
+</body>
+
+</html>

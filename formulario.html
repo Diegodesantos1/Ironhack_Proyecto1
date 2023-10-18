@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario - Películas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Formulario</h1>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de la página">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Películas</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <br><br>
+        <form method="get" action="cartelera.html">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <br><br>
+
+            <label for="director">Director:</label>
+            <input type="text" id="director" name="director">
+            <br><br>
+
+            <label for="anio">Año de Lanzamiento:</label>
+            <input type="number" id="anio" name="anio">
+            <br><br>
+
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero">
+                <option value="acción">Acción</option>
+                <option value="comedia">Comedia</option>
+                <option value="drama">Drama</option>
+                <option value="terror">Terror</option>
+                <option value="otros">Otros</option>
+            </select>
+            <br><br>
+
+            <label for="sinopsis">Sinopsis:</label>
+            <textarea id="sinopsis" name="sinopsis" rows="4" placeholder="Introduce la sinopsis"></textarea>
+            <br><br>
+
+            <label for="imagen">URL de la Imagen:</label>
+            <input type="text" id="imagen" name="imagen">
+            <br><br>
+            <input type="submit" value="Agregar Película">
+            <br><br>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Derechos reservados</p>
+    </footer>
+</body>
+</html>
